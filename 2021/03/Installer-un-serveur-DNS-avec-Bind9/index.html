@@ -9,7 +9,7 @@
   <title>Installer un serveur DNS avec Bind9 | Blog de Matt</title>
   <meta name="author" content="Matt">
   
-  <meta name="description" content="blog de matt">
+  <meta name="description" content="Installer un serveur DNS sous Linux">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -107,6 +107,10 @@
 
 	<!-- content -->
 	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> Installer un serveur DNS sous Linux
+		 </div> <!-- alert -->
 	  		
 
 	  <h1 id="Installer-un-serveur-DNS-avec-Bind9"><a href="#Installer-un-serveur-DNS-avec-Bind9" class="headerlink" title="Installer un serveur DNS avec Bind9"></a>Installer un serveur DNS avec Bind9</h1><h2 id="Installer-Bind9"><a href="#Installer-Bind9" class="headerlink" title="Installer Bind9"></a>Installer Bind9</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install bind9</span><br></pre></td></tr></table></figure>
@@ -171,6 +175,7 @@ OK
 <li>Pour connaitre le nom du pc : <code>cat /etc/hostname</code></li>
 <li>Attribuer des noms d’hôtes à chacune des adresses IP dans <code>/etc/hosts</code></li>
 <li>Activer le mode debug de bind : <code>/usr/sbin/named -d9 -g -u bind</code></li>
+<li>Sur Windows, ne pas oublier de vider le cache : <code>ipconfig /flushdns</code></li>
 </ul>
 
 	  <div>
@@ -233,6 +238,17 @@ OK
 
 	<!-- categories -->
     
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/website/categories/Linux/">Linux<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
 
 	<!-- tags -->
 	
@@ -247,6 +263,12 @@ OK
 
 	<!-- toc -->
 	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Installer-un-serveur-DNS-avec-Bind9"><span class="toc-article-text">Installer un serveur DNS avec Bind9</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Installer-Bind9"><span class="toc-article-text">Installer Bind9</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Fichier-de-configuration-de-Bind9"><span class="toc-article-text">Fichier de configuration de Bind9</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Creation-du-fichier-Ressources-Records-RR"><span class="toc-article-text">Création du fichier Ressources Records (RR)</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Modification-du-fichier-resolv-conf"><span class="toc-article-text">Modification du fichier resolv.conf</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Verification-des-configurations"><span class="toc-article-text">Vérification des configurations</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Quelques-infos"><span class="toc-article-text">Quelques infos</span></a></li></ol></li></ol>
+		</div>
 	
 	</div>
 	
