@@ -101,7 +101,53 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2021/03/Customiser-la-console-bash/" title="Customiser la console bash en modifiant le ficher .bashrc">Customiser la console bash</a>
+			<a href="/2021/03/IPv4-mask/" >IPv4 mask</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-03-09  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="IPv4-mask"><a href="#IPv4-mask" class="headerlink" title="IPv4 mask"></a>IPv4 mask</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://cric.grenoble.cnrs.fr/Administrateurs/Outils/CalculMasque/">Calculateur de masque en ligne</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Decimal          Binary                               CIDR Hex</span><br><span class="line">-------------------------------------------------------------------</span><br><span class="line">255.255.255.255  11111111.11111111.11111111.11111111  &#x2F;32  ffffffff</span><br><span class="line">255.255.255.254  11111111.11111111.11111111.11111110  &#x2F;31  fffffffe</span><br><span class="line">255.255.255.252  11111111.11111111.11111111.11111100  &#x2F;30  fffffffc</span><br><span class="line">255.255.255.248  11111111.11111111.11111111.11111000  &#x2F;29  fffffff8</span><br><span class="line">255.255.255.240  11111111.11111111.11111111.11110000  &#x2F;28  fffffff0</span><br><span class="line">255.255.255.224  11111111.11111111.11111111.11100000  &#x2F;27  ffffffe0</span><br><span class="line">255.255.255.192  11111111.11111111.11111111.11000000  &#x2F;26  ffffffc0</span><br><span class="line">255.255.255.128  11111111.11111111.11111111.10000000  &#x2F;25  ffffff80</span><br><span class="line">255.255.255.0    11111111.11111111.11111111.00000000  &#x2F;24  ffffff00</span><br><span class="line"></span><br><span class="line">255.255.254.0    11111111.11111111.11111110.00000000  &#x2F;23  fffffe00</span><br><span class="line">255.255.252.0    11111111.11111111.11111100.00000000  &#x2F;22  fffffc00</span><br><span class="line">255.255.248.0    11111111.11111111.11111000.00000000  &#x2F;21  fffff800</span><br><span class="line">255.255.240.0    11111111.11111111.11110000.00000000  &#x2F;20  fffff000</span><br><span class="line">255.255.224.0    11111111.11111111.11100000.00000000  &#x2F;19  ffffe000</span><br><span class="line">255.255.192.0    11111111.11111111.11000000.00000000  &#x2F;18  ffffc000</span><br><span class="line">255.255.128.0    11111111.11111111.10000000.00000000  &#x2F;17  ffff8000</span><br><span class="line">255.255.0.0      11111111.11111111.00000000.00000000  &#x2F;16  ffff0000</span><br><span class="line"></span><br><span class="line">255.254.0.0      11111111.11111110.00000000.00000000  &#x2F;15  fffe0000</span><br><span class="line">255.252.0.0      11111111.11111100.00000000.00000000  &#x2F;14  fffc0000</span><br><span class="line">255.248.0.0      11111111.11111000.00000000.00000000  &#x2F;13  fff80000</span><br><span class="line">255.240.0.0      11111111.11110000.00000000.00000000  &#x2F;12  fff00000</span><br><span class="line">255.224.0.0      11111111.11100000.00000000.00000000  &#x2F;11  ffe00000</span><br><span class="line">255.192.0.0      11111111.11000000.00000000.00000000  &#x2F;10  ffc00000</span><br><span class="line">255.128.0.0      11111111.10000000.00000000.00000000  &#x2F;9   ff800000</span><br><span class="line">255.0.0.0        11111111.00000000.00000000.00000000  &#x2F;8   ff000000</span><br><span class="line"></span><br><span class="line">254.0.0.0        11111110.00000000.00000000.00000000  &#x2F;7   fe000000</span><br><span class="line">252.0.0.0        11111100.00000000.00000000.00000000  &#x2F;6   fc000000</span><br><span class="line">248.0.0.0        11111000.00000000.00000000.00000000  &#x2F;5   f8000000</span><br><span class="line">240.0.0.0        11110000.00000000.00000000.00000000  &#x2F;4   f0000000</span><br><span class="line">224.0.0.0        11100000.00000000.00000000.00000000  &#x2F;3   e0000000</span><br><span class="line">192.0.0.0        11000000.00000000.00000000.00000000  &#x2F;2   c0000000</span><br><span class="line">128.0.0.0        10000000.00000000.00000000.00000000  &#x2F;1   80000000</span><br><span class="line">0.0.0.0          00000000.00000000.00000000.00000000  &#x2F;0   00000000</span><br></pre></td></tr></table></figure>
+	
+
+	</div>
+  <a type="button" href="/2021/03/IPv4-mask/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="IPv4-mask"><a href="#IPv4-mask" class="headerlink" title="IPv4 mask"></a>IPv4 mask</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://cric.grenoble.cnrs.fr/Administrateurs/Outils/CalculMasque/">Calculateur de masque en ligne</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Decimal          Binary                               CIDR Hex</span><br><span class="line">-------------------------------------------------------------------</span><br><span class="line">255.255.255.255  11111111.11111111.11111111.11111111  &#x2F;32  ffffffff</span><br><span class="line">255.255.255.254  11111111.11111111.11111111.11111110  &#x2F;31  fffffffe</span><br><span class="line">255.255.255.252  11111111.11111111.11111111.11111100  &#x2F;30  fffffffc</span><br><span class="line">255.255.255.248  11111111.11111111.11111111.11111000  &#x2F;29  fffffff8</span><br><span class="line">255.255.255.240  11111111.11111111.11111111.11110000  &#x2F;28  fffffff0</span><br><span class="line">255.255.255.224  11111111.11111111.11111111.11100000  &#x2F;27  ffffffe0</span><br><span class="line">255.255.255.192  11111111.11111111.11111111.11000000  &#x2F;26  ffffffc0</span><br><span class="line">255.255.255.128  11111111.11111111.11111111.10000000  &#x2F;25  ffffff80</span><br><span class="line">255.255.255.0    11111111.11111111.11111111.00000000  &#x2F;24  ffffff00</span><br><span class="line"></span><br><span class="line">255.255.254.0    11111111.11111111.11111110.00000000  &#x2F;23  fffffe00</span><br><span class="line">255.255.252.0    11111111.11111111.11111100.00000000  &#x2F;22  fffffc00</span><br><span class="line">255.255.248.0    11111111.11111111.11111000.00000000  &#x2F;21  fffff800</span><br><span class="line">255.255.240.0    11111111.11111111.11110000.00000000  &#x2F;20  fffff000</span><br><span class="line">255.255.224.0    11111111.11111111.11100000.00000000  &#x2F;19  ffffe000</span><br><span class="line">255.255.192.0    11111111.11111111.11000000.00000000  &#x2F;18  ffffc000</span><br><span class="line">255.255.128.0    11111111.11111111.10000000.00000000  &#x2F;17  ffff8000</span><br><span class="line">255.255.0.0      11111111.11111111.00000000.00000000  &#x2F;16  ffff0000</span><br><span class="line"></span><br><span class="line">255.254.0.0      11111111.11111110.00000000.00000000  &#x2F;15  fffe0000</span><br><span class="line">255.252.0.0      11111111.11111100.00000000.00000000  &#x2F;14  fffc0000</span><br><span class="line">255.248.0.0      11111111.11111000.00000000.00000000  &#x2F;13  fff80000</span><br><span class="line">255.240.0.0      11111111.11110000.00000000.00000000  &#x2F;12  fff00000</span><br><span class="line">255.224.0.0      11111111.11100000.00000000.00000000  &#x2F;11  ffe00000</span><br><span class="line">255.192.0.0      11111111.11000000.00000000.00000000  &#x2F;10  ffc00000</span><br><span class="line">255.128.0.0      11111111.10000000.00000000.00000000  &#x2F;9   ff800000</span><br><span class="line">255.0.0.0        11111111.00000000.00000000.00000000  &#x2F;8   ff000000</span><br><span class="line"></span><br><span class="line">254.0.0.0        11111110.00000000.00000000.00000000  &#x2F;7   fe000000</span><br><span class="line">252.0.0.0        11111100.00000000.00000000.00000000  &#x2F;6   fc000000</span><br><span class="line">248.0.0.0        11111000.00000000.00000000.00000000  &#x2F;5   f8000000</span><br><span class="line">240.0.0.0        11110000.00000000.00000000.00000000  &#x2F;4   f0000000</span><br><span class="line">224.0.0.0        11100000.00000000.00000000.00000000  &#x2F;3   e0000000</span><br><span class="line">192.0.0.0        11000000.00000000.00000000.00000000  &#x2F;2   c0000000</span><br><span class="line">128.0.0.0        10000000.00000000.00000000.00000000  &#x2F;1   80000000</span><br><span class="line">0.0.0.0          00000000.00000000.00000000.00000000  &#x2F;0   00000000</span><br></pre></td></tr></table></figure>
+	
+	</div>
+  <a type="button" href="/2021/03/IPv4-mask/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2021/03/Customiser-la-console-bash/" >Customiser la console bash</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
@@ -258,6 +304,8 @@
 		
 			<li><a href="/categories/Linux/">Linux<span>2</span></a></li>
 		
+			<li><a href="/categories/Network/">Network<span>1</span></a></li>
+		
 		</ul>
 	</div>
 
@@ -266,6 +314,8 @@
 	<div class="widget">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
 		
 			<li><a href="/tags/DNS/">DNS<span>1</span></a></li>
 		
@@ -283,7 +333,11 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2021/03/Customiser-la-console-bash/"  title="Customiser la console bash en modifiant le ficher .bashrc" ><i class="fa fa-file-o"></i>Customiser la console bash</a>
+        <a href="/2021/03/IPv4-mask/" ><i class="fa fa-file-o"></i>IPv4 mask</a>
+      </li>
+    
+      <li>
+        <a href="/2021/03/Customiser-la-console-bash/" ><i class="fa fa-file-o"></i>Customiser la console bash</a>
       </li>
     
       <li>

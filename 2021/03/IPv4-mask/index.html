@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>IPv4 mask | Blog de Matt</title>
+  <meta name="author" content="Matt">
+  
+  <meta name="description" content="blog de matt">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="IPv4 mask"/>
+  <meta property="og:site_name" content="Blog de Matt"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favico.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Blog de Matt</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> IPv4 mask</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="IPv4-mask"><a href="#IPv4-mask" class="headerlink" title="IPv4 mask"></a>IPv4 mask</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://cric.grenoble.cnrs.fr/Administrateurs/Outils/CalculMasque/">Calculateur de masque en ligne</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Decimal          Binary                               CIDR Hex</span><br><span class="line">-------------------------------------------------------------------</span><br><span class="line">255.255.255.255  11111111.11111111.11111111.11111111  &#x2F;32  ffffffff</span><br><span class="line">255.255.255.254  11111111.11111111.11111111.11111110  &#x2F;31  fffffffe</span><br><span class="line">255.255.255.252  11111111.11111111.11111111.11111100  &#x2F;30  fffffffc</span><br><span class="line">255.255.255.248  11111111.11111111.11111111.11111000  &#x2F;29  fffffff8</span><br><span class="line">255.255.255.240  11111111.11111111.11111111.11110000  &#x2F;28  fffffff0</span><br><span class="line">255.255.255.224  11111111.11111111.11111111.11100000  &#x2F;27  ffffffe0</span><br><span class="line">255.255.255.192  11111111.11111111.11111111.11000000  &#x2F;26  ffffffc0</span><br><span class="line">255.255.255.128  11111111.11111111.11111111.10000000  &#x2F;25  ffffff80</span><br><span class="line">255.255.255.0    11111111.11111111.11111111.00000000  &#x2F;24  ffffff00</span><br><span class="line"></span><br><span class="line">255.255.254.0    11111111.11111111.11111110.00000000  &#x2F;23  fffffe00</span><br><span class="line">255.255.252.0    11111111.11111111.11111100.00000000  &#x2F;22  fffffc00</span><br><span class="line">255.255.248.0    11111111.11111111.11111000.00000000  &#x2F;21  fffff800</span><br><span class="line">255.255.240.0    11111111.11111111.11110000.00000000  &#x2F;20  fffff000</span><br><span class="line">255.255.224.0    11111111.11111111.11100000.00000000  &#x2F;19  ffffe000</span><br><span class="line">255.255.192.0    11111111.11111111.11000000.00000000  &#x2F;18  ffffc000</span><br><span class="line">255.255.128.0    11111111.11111111.10000000.00000000  &#x2F;17  ffff8000</span><br><span class="line">255.255.0.0      11111111.11111111.00000000.00000000  &#x2F;16  ffff0000</span><br><span class="line"></span><br><span class="line">255.254.0.0      11111111.11111110.00000000.00000000  &#x2F;15  fffe0000</span><br><span class="line">255.252.0.0      11111111.11111100.00000000.00000000  &#x2F;14  fffc0000</span><br><span class="line">255.248.0.0      11111111.11111000.00000000.00000000  &#x2F;13  fff80000</span><br><span class="line">255.240.0.0      11111111.11110000.00000000.00000000  &#x2F;12  fff00000</span><br><span class="line">255.224.0.0      11111111.11100000.00000000.00000000  &#x2F;11  ffe00000</span><br><span class="line">255.192.0.0      11111111.11000000.00000000.00000000  &#x2F;10  ffc00000</span><br><span class="line">255.128.0.0      11111111.10000000.00000000.00000000  &#x2F;9   ff800000</span><br><span class="line">255.0.0.0        11111111.00000000.00000000.00000000  &#x2F;8   ff000000</span><br><span class="line"></span><br><span class="line">254.0.0.0        11111110.00000000.00000000.00000000  &#x2F;7   fe000000</span><br><span class="line">252.0.0.0        11111100.00000000.00000000.00000000  &#x2F;6   fc000000</span><br><span class="line">248.0.0.0        11111000.00000000.00000000.00000000  &#x2F;5   f8000000</span><br><span class="line">240.0.0.0        11110000.00000000.00000000.00000000  &#x2F;4   f0000000</span><br><span class="line">224.0.0.0        11100000.00000000.00000000.00000000  &#x2F;3   e0000000</span><br><span class="line">192.0.0.0        11000000.00000000.00000000.00000000  &#x2F;2   c0000000</span><br><span class="line">128.0.0.0        10000000.00000000.00000000.00000000  &#x2F;1   80000000</span><br><span class="line">0.0.0.0          00000000.00000000.00000000.00000000  &#x2F;0   00000000</span><br></pre></td></tr></table></figure>
+	  <div>
+</div>
+
+	</div>
+
+	
+	<span id="/2021/03/IPv4-mask/" class="leancloud-visitors view" data-flag-title="IPv4 mask">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/03/Customiser-la-console-bash/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	<!--  -->
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-03-09 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Network/">Network<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#IPv4-mask"><span class="toc-article-text">IPv4 mask</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2021 Matt's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+</body>
+   </html>
