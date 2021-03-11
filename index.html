@@ -147,6 +147,62 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/03/Configurer-IP-statique-sous-Debian/" >Configurer IP statique sous Debian</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-03-08  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Configurer-IP-statique-sous-Debian"><a href="#Configurer-IP-statique-sous-Debian" class="headerlink" title="Configurer IP statique sous Debian"></a>Configurer IP statique sous Debian</h1><p>Il faut tout d’abord arreter le service <strong>Network Management</strong> : <code>sudo service networking stop</code></p>
+<p>Le fichier de configuration pour les interfaces réseaux se trouve dans : <code>/etc/network/</code>.<br><br><br>Modifier le fichier <code>interfaces</code> : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file describes the network interfaces available on your system</span></span><br><span class="line"><span class="comment"># and how to activate them. For more information, see interfaces(5).</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/network/interfaces.d/*</span><br><span class="line"></span><br><span class="line"><span class="comment"># The loopback network interface</span></span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto ens33</span><br><span class="line">allow-hotplug ens33</span><br><span class="line">iface ens33 inet static</span><br><span class="line">address 172.16.166.253/24</span><br><span class="line"></span><br><span class="line">auto ens160</span><br><span class="line">allow-hotplug ens160</span><br><span class="line">iface ens160 inet static</span><br><span class="line">address 192.170.180.253/30</span><br><span class="line">gateway 192.170.180.254</span><br><span class="line">dns-nameservers 208.67.222.222 <span class="comment"># Normalement pas utile si le DNS est indiqué dans /etc/resolv.conf</span></span><br><span class="line"></span><br><span class="line">auto ens192</span><br><span class="line">allow-hotplug ens33</span><br><span class="line">iface ens192 inet static</span><br><span class="line">address 172.16.14.254/24</span><br><span class="line"></span><br><span class="line">auto ens224</span><br><span class="line">allow-hotplug ens224</span><br><span class="line">iface ens224 inet static</span><br><span class="line">address 172.16.20.254/24</span><br><span class="line"></span><br><span class="line">auto ens256</span><br><span class="line">allow-hotplug ens256</span><br><span class="line">iface ens256 inet static</span><br><span class="line">address 172.16.13.254/24</span><br></pre></td></tr></table></figure>
+
+<p>Puis relancer le service <strong>Network Management</strong> : <code>sudo service networking start</code></p>
+<blockquote>
+<p>Voici la liste des différentes interfaces : <br><br>    - L’interface <strong><code>lo</code></strong> est l’interface dite de loopback. Elle permet au système de discuter avec lui-même et est absolument indispensable. L’unique adresse sur cette interface est 127.0.0.1.<br><br>    - Les interfaces <strong><code>ethX</code></strong> où X est un entier sont associées aux cartes réseau.<br><br>    - Les interfaces <strong><code>athX</code></strong> ou <strong><code>wlanX</code></strong>, où X est un entier, sont associées aux cartes WiFi.<br><br>    - Les interfaces <strong><code>tunX</code></strong> ou <strong><code>tapX</code></strong> sont souvent associées à des VPN.<br><br>    - Les interfaces <strong><code>pppX</code></strong> pour les modems…<br><br>    - Les interfaces <strong><code>usbX</code></strong> sont liées aux connexions réseau via USB, comme avec les smartphones.<br><br>    - Les interfaces <strong><code>brX</code></strong> correspondent à des bridges, c’est à dire la fusion de plusieurs interfaces en une seule.</p>
+</blockquote>
+
+	
+
+	</div>
+  <a type="button" href="/2021/03/Configurer-IP-statique-sous-Debian/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Configurer-IP-statique-sous-Debian"><a href="#Configurer-IP-statique-sous-Debian" class="headerlink" title="Configurer IP statique sous Debian"></a>Configurer IP statique sous Debian</h1><p>Il faut tout d’abord arreter le service <strong>Network Management</strong> : <code>sudo service networking stop</code></p>
+<p>Le fichier de configuration pour les interfaces réseaux se trouve dans : <code>/etc/network/</code>.<br><br><br>Modifier le fichier <code>interfaces</code> : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file describes the network interfaces available on your system</span></span><br><span class="line"><span class="comment"># and how to activate them. For more information, see interfaces(5).</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/network/interfaces.d/*</span><br><span class="line"></span><br><span class="line"><span class="comment"># The loopback network interface</span></span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto ens33</span><br><span class="line">allow-hotplug ens33</span><br><span class="line">iface ens33 inet static</span><br><span class="line">address 172.16.166.253/24</span><br><span class="line"></span><br><span class="line">auto ens160</span><br><span class="line">allow-hotplug ens160</span><br><span class="line">iface ens160 inet static</span><br><span class="line">address 192.170.180.253/30</span><br><span class="line">gateway 192.170.180.254</span><br><span class="line">dns-nameservers 208.67.222.222 <span class="comment"># Normalement pas utile si le DNS est indiqué dans /etc/resolv.conf</span></span><br><span class="line"></span><br><span class="line">auto ens192</span><br><span class="line">allow-hotplug ens33</span><br><span class="line">iface ens192 inet static</span><br><span class="line">address 172.16.14.254/24</span><br><span class="line"></span><br><span class="line">auto ens224</span><br><span class="line">allow-hotplug ens224</span><br><span class="line">iface ens224 inet static</span><br><span class="line">address 172.16.20.254/24</span><br><span class="line"></span><br><span class="line">auto ens256</span><br><span class="line">allow-hotplug ens256</span><br><span class="line">iface ens256 inet static</span><br><span class="line">address 172.16.13.254/24</span><br></pre></td></tr></table></figure>
+
+<p>Puis relancer le service <strong>Network Management</strong> : <code>sudo service networking start</code></p>
+<blockquote>
+<p>Voici la liste des différentes interfaces : <br><br>    - L’interface <strong><code>lo</code></strong> est l’interface dite de loopback. Elle permet au système de discuter avec lui-même et est absolument indispensable. L’unique adresse sur cette interface est 127.0.0.1.<br><br>    - Les interfaces <strong><code>ethX</code></strong> où X est un entier sont associées aux cartes réseau.<br><br>    - Les interfaces <strong><code>athX</code></strong> ou <strong><code>wlanX</code></strong>, où X est un entier, sont associées aux cartes WiFi.<br><br>    - Les interfaces <strong><code>tunX</code></strong> ou <strong><code>tapX</code></strong> sont souvent associées à des VPN.<br><br>    - Les interfaces <strong><code>pppX</code></strong> pour les modems…<br><br>    - Les interfaces <strong><code>usbX</code></strong> sont liées aux connexions réseau via USB, comme avec les smartphones.<br><br>    - Les interfaces <strong><code>brX</code></strong> correspondent à des bridges, c’est à dire la fusion de plusieurs interfaces en une seule.</p>
+</blockquote>
+
+	
+	</div>
+  <a type="button" href="/2021/03/Configurer-IP-statique-sous-Debian/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/03/Customiser-la-console-bash/" >Customiser la console bash</a>
 		</h3>
 		</div>
@@ -304,7 +360,7 @@
 		
 			<li><a href="/categories/Linux/">Linux<span>2</span></a></li>
 		
-			<li><a href="/categories/Network/">Network<span>1</span></a></li>
+			<li><a href="/categories/Network/">Network<span>2</span></a></li>
 		
 		</ul>
 	</div>
@@ -315,11 +371,13 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
-		
 			<li><a href="/tags/DNS/">DNS<span>1</span></a></li>
 		
 			<li><a href="/tags/bashrc/">bashrc<span>1</span></a></li>
+		
+			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
+		
+			<li><a href="/tags/IP-static-Debian/">IP static Debian<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -334,6 +392,10 @@
     
       <li>
         <a href="/2021/03/IPv4-mask/" ><i class="fa fa-file-o"></i>IPv4 mask</a>
+      </li>
+    
+      <li>
+        <a href="/2021/03/Configurer-IP-statique-sous-Debian/" ><i class="fa fa-file-o"></i>Configurer IP statique sous...</a>
       </li>
     
       <li>

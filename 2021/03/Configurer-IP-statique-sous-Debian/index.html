@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Configurer IP statique sous Debian | Blog de Matt</title>
+  <meta name="author" content="Matt">
+  
+  <meta name="description" content="blog de matt">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Configurer IP statique sous Debian"/>
+  <meta property="og:site_name" content="Blog de Matt"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favico.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Blog de Matt</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Configurer IP statique sous Debian</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="Configurer-IP-statique-sous-Debian"><a href="#Configurer-IP-statique-sous-Debian" class="headerlink" title="Configurer IP statique sous Debian"></a>Configurer IP statique sous Debian</h1><p>Il faut tout d’abord arreter le service <strong>Network Management</strong> : <code>sudo service networking stop</code></p>
+<p>Le fichier de configuration pour les interfaces réseaux se trouve dans : <code>/etc/network/</code>.<br><br><br>Modifier le fichier <code>interfaces</code> : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file describes the network interfaces available on your system</span></span><br><span class="line"><span class="comment"># and how to activate them. For more information, see interfaces(5).</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/network/interfaces.d/*</span><br><span class="line"></span><br><span class="line"><span class="comment"># The loopback network interface</span></span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto ens33</span><br><span class="line">allow-hotplug ens33</span><br><span class="line">iface ens33 inet static</span><br><span class="line">address 172.16.166.253/24</span><br><span class="line"></span><br><span class="line">auto ens160</span><br><span class="line">allow-hotplug ens160</span><br><span class="line">iface ens160 inet static</span><br><span class="line">address 192.170.180.253/30</span><br><span class="line">gateway 192.170.180.254</span><br><span class="line">dns-nameservers 208.67.222.222 <span class="comment"># Normalement pas utile si le DNS est indiqué dans /etc/resolv.conf</span></span><br><span class="line"></span><br><span class="line">auto ens192</span><br><span class="line">allow-hotplug ens33</span><br><span class="line">iface ens192 inet static</span><br><span class="line">address 172.16.14.254/24</span><br><span class="line"></span><br><span class="line">auto ens224</span><br><span class="line">allow-hotplug ens224</span><br><span class="line">iface ens224 inet static</span><br><span class="line">address 172.16.20.254/24</span><br><span class="line"></span><br><span class="line">auto ens256</span><br><span class="line">allow-hotplug ens256</span><br><span class="line">iface ens256 inet static</span><br><span class="line">address 172.16.13.254/24</span><br></pre></td></tr></table></figure>
+
+<p>Puis relancer le service <strong>Network Management</strong> : <code>sudo service networking start</code></p>
+<blockquote>
+<p>Voici la liste des différentes interfaces : <br><br>    - L’interface <strong><code>lo</code></strong> est l’interface dite de loopback. Elle permet au système de discuter avec lui-même et est absolument indispensable. L’unique adresse sur cette interface est 127.0.0.1.<br><br>    - Les interfaces <strong><code>ethX</code></strong> où X est un entier sont associées aux cartes réseau.<br><br>    - Les interfaces <strong><code>athX</code></strong> ou <strong><code>wlanX</code></strong>, où X est un entier, sont associées aux cartes WiFi.<br><br>    - Les interfaces <strong><code>tunX</code></strong> ou <strong><code>tapX</code></strong> sont souvent associées à des VPN.<br><br>    - Les interfaces <strong><code>pppX</code></strong> pour les modems…<br><br>    - Les interfaces <strong><code>usbX</code></strong> sont liées aux connexions réseau via USB, comme avec les smartphones.<br><br>    - Les interfaces <strong><code>brX</code></strong> correspondent à des bridges, c’est à dire la fusion de plusieurs interfaces en une seule.</p>
+</blockquote>
+
+	  <div>
+</div>
+
+	</div>
+
+	
+	<span id="/2021/03/Configurer-IP-statique-sous-Debian/" class="leancloud-visitors view" data-flag-title="Configurer IP statique sous Debian">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2021/03/IPv4-mask/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/03/Customiser-la-console-bash/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	<!--  -->
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-03-08 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Network/">Network<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/IP-static-Debian/">IP static Debian<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Configurer-IP-statique-sous-Debian"><span class="toc-article-text">Configurer IP statique sous Debian</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2021 Matt's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+</body>
+   </html>
