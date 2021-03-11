@@ -101,6 +101,64 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/03/Configurer-IP-statique-sous-CentOS/" >Configurer IP statique sous CentOS</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-03-11  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Configurer-IP-statique-sous-CentOS"><a href="#Configurer-IP-statique-sous-CentOS" class="headerlink" title="Configurer IP statique sous CentOS"></a>Configurer IP statique sous CentOS</h1><h2 id="Parametre-des-interfaces"><a href="#Parametre-des-interfaces" class="headerlink" title="Paramètre des interfaces"></a>Paramètre des interfaces</h2><p>Les fichiers de configuration pour les interfaces réseaux se trouve dans : <code>/etc/sysconfig/network-scripts/</code>.<br><br><br>Modifier le fichier qui fait reférence à l’interface <code>ifcfg-ensXX</code> ou le créer (vérifier le nom de l’interface avec un <code>ip a</code>) : </p>
+<blockquote>
+<p>Exemple avec l’interface ens33 : ifcfg-ens33</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=ens33 <span class="comment">## Nom de l&#x27;interface</span></span><br><span class="line">BOOTPROTO=static <span class="comment">## Passer en mode static et non DHCP</span></span><br><span class="line">IPADDR=172.16.166.252  <span class="comment">## Adresse IP de la machine</span></span><br><span class="line">NETMASK=255.255.255.0   <span class="comment">## Masque sous-reseau</span></span><br><span class="line">IPV6INIT=no  <span class="comment">## Pas d&#x27;addresse IPv6</span></span><br><span class="line">NM_CONTROLLED=no  <span class="comment">## Pas de contrôle via NetworkManager</span></span><br><span class="line">ONBOOT=yes <span class="comment">## Monter l&#x27;interface au boot</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Parametre-reseaux-gereraux"><a href="#Parametre-reseaux-gereraux" class="headerlink" title="Paramètre réseaux géréraux"></a>Paramètre réseaux géréraux</h2><p>Le fichier de config se trouve dans <code>/etc/sysconfig/network</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NETWORKING=yes <span class="comment">## Activer le reseau</span></span><br><span class="line">NETWORKING_IPV6=no <span class="comment">## Activation ou pas de l&#x27;ipv6</span></span><br><span class="line">HOSTNAME=northstar  <span class="comment">## Le nom de la machine</span></span><br><span class="line">GATEWAY=172.16.166.253 <span class="comment">## Adresse ip de la passerelle</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Prise-en-compte-des-changements"><a href="#Prise-en-compte-des-changements" class="headerlink" title="Prise en compte des changements"></a>Prise en compte des changements</h2><p>Relance du service network <code>/etc/init.d/network restart </code></p>
+	
+
+	</div>
+  <a type="button" href="/2021/03/Configurer-IP-statique-sous-CentOS/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Configurer-IP-statique-sous-CentOS"><a href="#Configurer-IP-statique-sous-CentOS" class="headerlink" title="Configurer IP statique sous CentOS"></a>Configurer IP statique sous CentOS</h1><h2 id="Parametre-des-interfaces"><a href="#Parametre-des-interfaces" class="headerlink" title="Paramètre des interfaces"></a>Paramètre des interfaces</h2><p>Les fichiers de configuration pour les interfaces réseaux se trouve dans : <code>/etc/sysconfig/network-scripts/</code>.<br><br><br>Modifier le fichier qui fait reférence à l’interface <code>ifcfg-ensXX</code> ou le créer (vérifier le nom de l’interface avec un <code>ip a</code>) : </p>
+<blockquote>
+<p>Exemple avec l’interface ens33 : ifcfg-ens33</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=ens33 <span class="comment">## Nom de l&#x27;interface</span></span><br><span class="line">BOOTPROTO=static <span class="comment">## Passer en mode static et non DHCP</span></span><br><span class="line">IPADDR=172.16.166.252  <span class="comment">## Adresse IP de la machine</span></span><br><span class="line">NETMASK=255.255.255.0   <span class="comment">## Masque sous-reseau</span></span><br><span class="line">IPV6INIT=no  <span class="comment">## Pas d&#x27;addresse IPv6</span></span><br><span class="line">NM_CONTROLLED=no  <span class="comment">## Pas de contrôle via NetworkManager</span></span><br><span class="line">ONBOOT=yes <span class="comment">## Monter l&#x27;interface au boot</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Parametre-reseaux-gereraux"><a href="#Parametre-reseaux-gereraux" class="headerlink" title="Paramètre réseaux géréraux"></a>Paramètre réseaux géréraux</h2><p>Le fichier de config se trouve dans <code>/etc/sysconfig/network</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NETWORKING=yes <span class="comment">## Activer le reseau</span></span><br><span class="line">NETWORKING_IPV6=no <span class="comment">## Activation ou pas de l&#x27;ipv6</span></span><br><span class="line">HOSTNAME=northstar  <span class="comment">## Le nom de la machine</span></span><br><span class="line">GATEWAY=172.16.166.253 <span class="comment">## Adresse ip de la passerelle</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Prise-en-compte-des-changements"><a href="#Prise-en-compte-des-changements" class="headerlink" title="Prise en compte des changements"></a>Prise en compte des changements</h2><p>Relance du service network <code>/etc/init.d/network restart </code></p>
+	
+	</div>
+  <a type="button" href="/2021/03/Configurer-IP-statique-sous-CentOS/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/03/Configurer-IP-statique-sous-Debian/" >Configurer IP statique sous Debian</a>
 		</h3>
 		</div>
@@ -360,7 +418,7 @@
 		
 			<li><a href="/categories/Linux/">Linux<span>2</span></a></li>
 		
-			<li><a href="/categories/Network/">Network<span>2</span></a></li>
+			<li><a href="/categories/Network/">Network<span>3</span></a></li>
 		
 		</ul>
 	</div>
@@ -371,13 +429,15 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
+		
 			<li><a href="/tags/DNS/">DNS<span>1</span></a></li>
+		
+			<li><a href="/tags/IP-static-Debian/">IP static Debian<span>1</span></a></li>
 		
 			<li><a href="/tags/bashrc/">bashrc<span>1</span></a></li>
 		
-			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
-		
-			<li><a href="/tags/IP-static-Debian/">IP static Debian<span>1</span></a></li>
+			<li><a href="/tags/IP-static-CentOS/">IP static CentOS<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -389,6 +449,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2021/03/Configurer-IP-statique-sous-CentOS/" ><i class="fa fa-file-o"></i>Configurer IP statique sous...</a>
+      </li>
     
       <li>
         <a href="/2021/03/Configurer-IP-statique-sous-Debian/" ><i class="fa fa-file-o"></i>Configurer IP statique sous...</a>
