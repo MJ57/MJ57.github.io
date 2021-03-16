@@ -112,6 +112,66 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/03/Systemctl-list-services/" >Systemctl list services</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-03-16  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Systemctl-list-services"><a href="#Systemctl-list-services" class="headerlink" title="Systemctl list services"></a>Systemctl list services</h1><p>Permet de lister les services actifs et en fonctionnement <br><br>La commande <code>systemctl</code> est la commande principale de systemd, utilisée pour contrôler les services. </p>
+<ul>
+<li>Lister tous les services : <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-unit-files --<span class="built_in">type</span>=service</span><br></pre></td></tr></table></figure></li>
+<li>Lister les services activés (configurés pour démarrer au démarrage): <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-unit-files --<span class="built_in">type</span>=service --state=enabled</span><br></pre></td></tr></table></figure></li>
+<li>Lister les services en cours d’exécution : <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-units --<span class="built_in">type</span>=service --state=running</span><br><span class="line">$ systemctl list-units --<span class="built_in">type</span>=service --state=active</span><br></pre></td></tr></table></figure></li>
+<li>Pour obtenir plus de détails sur le service :<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status &lt;service_name&gt;.service</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Creer-un-alias-dans-bashrc"><a href="#Creer-un-alias-dans-bashrc" class="headerlink" title="Créer un alias dans bashrc"></a>Créer un alias dans bashrc</h2><p>Modifier le ficher bashrc : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano .bashrc</span><br></pre></td></tr></table></figure>
+<p>Puis ajouter : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> list-running=<span class="string">&#x27;systemctl list-units --type=service --state=running&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> list-active=<span class="string">&#x27;systemctl list-units --type=service --state=active&#x27;</span></span><br></pre></td></tr></table></figure>
+	
+
+	</div>
+  <a type="button" href="/2021/03/Systemctl-list-services/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Systemctl-list-services"><a href="#Systemctl-list-services" class="headerlink" title="Systemctl list services"></a>Systemctl list services</h1><p>Permet de lister les services actifs et en fonctionnement <br><br>La commande <code>systemctl</code> est la commande principale de systemd, utilisée pour contrôler les services. </p>
+<ul>
+<li>Lister tous les services : <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-unit-files --<span class="built_in">type</span>=service</span><br></pre></td></tr></table></figure></li>
+<li>Lister les services activés (configurés pour démarrer au démarrage): <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-unit-files --<span class="built_in">type</span>=service --state=enabled</span><br></pre></td></tr></table></figure></li>
+<li>Lister les services en cours d’exécution : <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-units --<span class="built_in">type</span>=service --state=running</span><br><span class="line">$ systemctl list-units --<span class="built_in">type</span>=service --state=active</span><br></pre></td></tr></table></figure></li>
+<li>Pour obtenir plus de détails sur le service :<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status &lt;service_name&gt;.service</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Creer-un-alias-dans-bashrc"><a href="#Creer-un-alias-dans-bashrc" class="headerlink" title="Créer un alias dans bashrc"></a>Créer un alias dans bashrc</h2><p>Modifier le ficher bashrc : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano .bashrc</span><br></pre></td></tr></table></figure>
+<p>Puis ajouter : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> list-running=<span class="string">&#x27;systemctl list-units --type=service --state=running&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> list-active=<span class="string">&#x27;systemctl list-units --type=service --state=active&#x27;</span></span><br></pre></td></tr></table></figure>
+	
+	</div>
+  <a type="button" href="/2021/03/Systemctl-list-services/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/03/Shell-ssh-banner/" >Shell ssh banner</a>
 		</h3>
 		</div>
@@ -481,7 +541,7 @@
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/Linux/">Linux<span>3</span></a></li>
+			<li><a href="/categories/Linux/">Linux<span>4</span></a></li>
 		
 			<li><a href="/categories/Network/">Network<span>3</span></a></li>
 		
@@ -494,17 +554,19 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/DNS/">DNS<span>1</span></a></li>
-		
 			<li><a href="/tags/IP-static-Debian/">IP static Debian<span>1</span></a></li>
 		
 			<li><a href="/tags/bashrc/">bashrc<span>1</span></a></li>
 		
-			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
-		
 			<li><a href="/tags/IP-static-CentOS/">IP static CentOS<span>1</span></a></li>
 		
+			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
+		
+			<li><a href="/tags/systemctl/">systemctl<span>1</span></a></li>
+		
 			<li><a href="/tags/ssh-banner/">ssh banner<span>1</span></a></li>
+		
+			<li><a href="/tags/DNS/">DNS<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -516,6 +578,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2021/03/Systemctl-list-services/" ><i class="fa fa-file-o"></i>Systemctl list services</a>
+      </li>
     
       <li>
         <a href="/2021/03/Shell-ssh-banner/" ><i class="fa fa-file-o"></i>Shell ssh banner</a>
@@ -531,10 +597,6 @@
     
       <li>
         <a href="/2021/03/IPv4-mask/" ><i class="fa fa-file-o"></i>IPv4 mask</a>
-      </li>
-    
-      <li>
-        <a href="/2021/03/Customiser-la-console-bash/" ><i class="fa fa-file-o"></i>Customiser la console bash</a>
       </li>
     
   </ul>
