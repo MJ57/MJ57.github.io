@@ -6,7 +6,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Systemctl list services | Blog de Matt</title>
+  <title>Installer Cockpit | Blog de Matt</title>
   <meta name="author" content="Matt">
   
   <meta name="description" content="blog de matt">
@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Systemctl list services"/>
+  <meta property="og:title" content="Installer Cockpit"/>
   <meta property="og:site_name" content="Blog de Matt"/>
 
   
@@ -87,7 +87,7 @@
 
 	
 		<div class="page-header">
-			<h1> Systemctl list services</h1>
+			<h1> Installer Cockpit</h1>
 		</div>
 	
 
@@ -104,24 +104,23 @@
 	<div class="mypage">		
 	  		
 
-	  <h1 id="Systemctl-list-services"><a href="#Systemctl-list-services" class="headerlink" title="Systemctl list services"></a>Systemctl list services</h1><p>Permet de lister les services actifs et en fonctionnement <br><br>La commande <code>systemctl</code> est la commande principale de systemd, utilisée pour contrôler les services. </p>
-<ul>
-<li>Lister tous les services : <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-unit-files --<span class="built_in">type</span>=service</span><br></pre></td></tr></table></figure></li>
-<li>Lister les services activés (configurés pour démarrer au démarrage): <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-unit-files --<span class="built_in">type</span>=service --state=enabled</span><br></pre></td></tr></table></figure></li>
-<li>Lister les services en cours d’exécution : <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl list-units --<span class="built_in">type</span>=service --state=running</span><br><span class="line">$ systemctl list-units --<span class="built_in">type</span>=service --state=active</span><br></pre></td></tr></table></figure></li>
-<li>Pour obtenir plus de détails sur le service :<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status &lt;service_name&gt;.service</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="Creer-un-alias-dans-bashrc"><a href="#Creer-un-alias-dans-bashrc" class="headerlink" title="Créer un alias dans bashrc"></a>Créer un alias dans bashrc</h2><p>Modifier le ficher bashrc : </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano .bashrc</span><br></pre></td></tr></table></figure>
-<p>Puis ajouter : </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> list-running=<span class="string">&#x27;systemctl list-units --type=service --state=running&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> list-active=<span class="string">&#x27;systemctl list-units --type=service --state=active&#x27;</span></span><br></pre></td></tr></table></figure>
+	  <h1 id="Installer-Cockpit"><a href="#Installer-Cockpit" class="headerlink" title="Installer Cockpit"></a>Installer Cockpit</h1><p>Cockpit, gérer son serveur Linux via une interface web</p>
+<img src="/2021/03/Installer-Cockpit/Cockpit.png" class="">
+
+<p><code>sudo apt install cockpit</code><br><br><code> sudo systemctl enable cockpit &amp;&amp; sudo systemctl start cockpit</code></p>
+<p>Si le message d’erreur suivant apparait : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">The unit files have no installation config (WantedBy=, RequiredBy=, Also=,</span><br><span class="line">Alias= settings <span class="keyword">in</span> the [Install] section, and DefaultInstance= <span class="keyword">for</span> template</span><br><span class="line">units). This means they are not meant to be enabled using systemctl.</span><br><span class="line"> </span><br><span class="line">Possible reasons <span class="keyword">for</span> having this kind of units are:</span><br><span class="line">• A unit may be statically enabled by being symlinked from another unit<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">  .wants/ or .requires/ directory.</span></span><br><span class="line"><span class="string">• A unit&#x27;</span>s purpose may be to act as a helper <span class="keyword">for</span> some other unit <span class="built_in">which</span> has</span><br><span class="line">  a requirement dependency on it.</span><br><span class="line">• A unit may be started when needed via activation (socket, path, timer,</span><br><span class="line">  D-Bus, udev, scripted systemctl call, ...).</span><br><span class="line">• In <span class="keyword">case</span> of template units, the unit is meant to be enabled with some</span><br><span class="line">  instance name specified.</span><br></pre></td></tr></table></figure>
+
+<p>Modifier le fichier : <code>sudo nano /usr/lib/systemd/system/cockpit.service </code></p>
+<p>Puis ajouter ceci à la fin : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 	  <div>
 </div>
 
 	</div>
 
 	
-	<span id="/2021/03/Systemctl-list-services/" class="leancloud-visitors view" data-flag-title="Systemctl list services">
+	<span id="/2021/03/Installer-Cockpit/" class="leancloud-visitors view" data-flag-title="Installer Cockpit">
 		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
 	</span>
 	
@@ -132,13 +131,12 @@
 
     
     
-    <a href="/2021/03/Installer-Cockpit/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2021/03/Shell-ssh-banner/" type="button" class="btn btn-default ">Next<i
+    <a href="/2021/03/Systemctl-list-services/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -170,7 +168,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2021-03-16 
+	2021-03-25 
 	</div>
 	
 
@@ -194,7 +192,7 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/bashrc/">bashrc<span>2</span></a></li> <li><a href="/tags/systemctl/">systemctl<span>1</span></a></li>
+  <li><a href="/tags/cockpit/">cockpit<span>1</span></a></li>
     </ul>
 	</div>
 		
@@ -205,7 +203,7 @@
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Systemctl-list-services"><span class="toc-article-text">Systemctl list services</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#Creer-un-alias-dans-bashrc"><span class="toc-article-text">Créer un alias dans bashrc</span></a></li></ol></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Installer-Cockpit"><span class="toc-article-text">Installer Cockpit</span></a></li></ol>
 		</div>
 	
 	</div>

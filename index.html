@@ -112,6 +112,64 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/03/Installer-Cockpit/" >Installer Cockpit</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-03-25  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Installer-Cockpit"><a href="#Installer-Cockpit" class="headerlink" title="Installer Cockpit"></a>Installer Cockpit</h1><p>Cockpit, gérer son serveur Linux via une interface web</p>
+<img src="/2021/03/Installer-Cockpit/Cockpit.png" class>
+
+<p><code>sudo apt install cockpit</code><br><br><code> sudo systemctl enable cockpit &amp;&amp; sudo systemctl start cockpit</code></p>
+<p>Si le message d’erreur suivant apparait : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">The unit files have no installation config (WantedBy=, RequiredBy=, Also=,</span><br><span class="line">Alias= settings <span class="keyword">in</span> the [Install] section, and DefaultInstance= <span class="keyword">for</span> template</span><br><span class="line">units). This means they are not meant to be enabled using systemctl.</span><br><span class="line"> </span><br><span class="line">Possible reasons <span class="keyword">for</span> having this kind of units are:</span><br><span class="line">• A unit may be statically enabled by being symlinked from another unit<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">  .wants/ or .requires/ directory.</span></span><br><span class="line"><span class="string">• A unit&#x27;</span>s purpose may be to act as a helper <span class="keyword">for</span> some other unit <span class="built_in">which</span> has</span><br><span class="line">  a requirement dependency on it.</span><br><span class="line">• A unit may be started when needed via activation (socket, path, timer,</span><br><span class="line">  D-Bus, udev, scripted systemctl call, ...).</span><br><span class="line">• In <span class="keyword">case</span> of template units, the unit is meant to be enabled with some</span><br><span class="line">  instance name specified.</span><br></pre></td></tr></table></figure>
+
+<p>Modifier le fichier : <code>sudo nano /usr/lib/systemd/system/cockpit.service </code></p>
+<p>Puis ajouter ceci à la fin : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+	
+
+	</div>
+  <a type="button" href="/2021/03/Installer-Cockpit/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Installer-Cockpit"><a href="#Installer-Cockpit" class="headerlink" title="Installer Cockpit"></a>Installer Cockpit</h1><p>Cockpit, gérer son serveur Linux via une interface web</p>
+<img src="/2021/03/Installer-Cockpit/Cockpit.png" class>
+
+<p><code>sudo apt install cockpit</code><br><br><code> sudo systemctl enable cockpit &amp;&amp; sudo systemctl start cockpit</code></p>
+<p>Si le message d’erreur suivant apparait : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">The unit files have no installation config (WantedBy=, RequiredBy=, Also=,</span><br><span class="line">Alias= settings <span class="keyword">in</span> the [Install] section, and DefaultInstance= <span class="keyword">for</span> template</span><br><span class="line">units). This means they are not meant to be enabled using systemctl.</span><br><span class="line"> </span><br><span class="line">Possible reasons <span class="keyword">for</span> having this kind of units are:</span><br><span class="line">• A unit may be statically enabled by being symlinked from another unit<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">  .wants/ or .requires/ directory.</span></span><br><span class="line"><span class="string">• A unit&#x27;</span>s purpose may be to act as a helper <span class="keyword">for</span> some other unit <span class="built_in">which</span> has</span><br><span class="line">  a requirement dependency on it.</span><br><span class="line">• A unit may be started when needed via activation (socket, path, timer,</span><br><span class="line">  D-Bus, udev, scripted systemctl call, ...).</span><br><span class="line">• In <span class="keyword">case</span> of template units, the unit is meant to be enabled with some</span><br><span class="line">  instance name specified.</span><br></pre></td></tr></table></figure>
+
+<p>Modifier le fichier : <code>sudo nano /usr/lib/systemd/system/cockpit.service </code></p>
+<p>Puis ajouter ceci à la fin : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+	
+	</div>
+  <a type="button" href="/2021/03/Installer-Cockpit/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/03/Systemctl-list-services/" >Systemctl list services</a>
 		</h3>
 		</div>
@@ -541,7 +599,7 @@
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/Linux/">Linux<span>4</span></a></li>
+			<li><a href="/categories/Linux/">Linux<span>5</span></a></li>
 		
 			<li><a href="/categories/Network/">Network<span>3</span></a></li>
 		
@@ -554,19 +612,21 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
-		
-			<li><a href="/tags/bashrc/">bashrc<span>2</span></a></li>
+			<li><a href="/tags/IP-static-CentOS/">IP static CentOS<span>1</span></a></li>
 		
 			<li><a href="/tags/DNS/">DNS<span>1</span></a></li>
 		
-			<li><a href="/tags/IP-static-CentOS/">IP static CentOS<span>1</span></a></li>
-		
-			<li><a href="/tags/ssh-banner/">ssh banner<span>1</span></a></li>
-		
 			<li><a href="/tags/systemctl/">systemctl<span>1</span></a></li>
 		
+			<li><a href="/tags/IPv4-mask/">IPv4 mask<span>1</span></a></li>
+		
 			<li><a href="/tags/IP-static-Debian/">IP static Debian<span>1</span></a></li>
+		
+			<li><a href="/tags/bashrc/">bashrc<span>2</span></a></li>
+		
+			<li><a href="/tags/cockpit/">cockpit<span>1</span></a></li>
+		
+			<li><a href="/tags/ssh-banner/">ssh banner<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -578,6 +638,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2021/03/Installer-Cockpit/" ><i class="fa fa-file-o"></i>Installer Cockpit</a>
+      </li>
     
       <li>
         <a href="/2021/03/Systemctl-list-services/" ><i class="fa fa-file-o"></i>Systemctl list services</a>
@@ -593,10 +657,6 @@
     
       <li>
         <a href="/2021/03/Configurer-IP-statique-sous-Debian/" ><i class="fa fa-file-o"></i>Configurer IP statique sous...</a>
-      </li>
-    
-      <li>
-        <a href="/2021/03/IPv4-mask/" ><i class="fa fa-file-o"></i>IPv4 mask</a>
       </li>
     
   </ul>
